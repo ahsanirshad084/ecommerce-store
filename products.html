@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <header>
+        <div class="navbar">
+           <div class="nav-logo">
+            <div class="logo border"></div>
+            </div>
+            <div class="nav-buttons">
+                <div class="product-button">
+                    <i class="fas fa-shopping-bag"></i>
+                    <p>product </p>
+                </div>
+                <div class="deals-button">
+                    <i class="fas fa-tags"></i>
+                    <p>deals</p>
+                </div>
+            </div>
+        </div>
+       
+    </header>
+
+    <main>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search products...">
+        </div>
+        <div class="filters">
+            <select id="category-filter">
+                <option value="">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="home-garden">Home & Garden</option>
+            </select>
+            <input type="number" id="min-price" placeholder="Min Price" min="0">
+            <input type="number" id="max-price" placeholder="Max Price" min="0">
+            <button id="apply-filters">Apply Filters</button>
+        </div>
+
+        <section class="category-section" id="electronics">
+            <h2>Electronics</h2>
+            <div class="products-grid">
+                <div class="product-card" data-name="Smartphone" data-category="electronics" data-price="299">
+                    <img src="malik.webp" alt="Smartphone">
+                    <h3>Smartphone</h3>
+                    <p class="description">Latest smartphone with advanced camera and battery life.</p>
+                    <div class="rating">★★★★☆ <span class="rating-value">4.5</span></div>
+                    <p class="price">$299</p>
+                    <a href="product-detail.html?name=Smartphone" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Smartphone', '299')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Smartphone', '299')">Add to Wishlist</button>
+                </div>
+                <div class="product-card" data-name="Laptop" data-category="electronics" data-price="999">
+                    <img src="malik.webp" alt="Laptop">
+                    <h3>Laptop</h3>
+                    <p class="description">High-performance laptop for work and gaming.</p>
+                    <div class="rating">★★★★★ <span class="rating-value">5.0</span></div>
+                    <p class="price">$999</p>
+                    <a href="product-detail.html?name=Laptop" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Laptop', '999')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Laptop', '999')">Add to Wishlist</button>
+                </div>
+                <div class="product-card" data-name="Headphones" data-category="electronics" data-price="49">
+                    <img src="malik.webp" alt="Headphones">
+                    <h3>Headphones</h3>
+                    <p class="description">Wireless headphones with noise cancellation.</p>
+                    <div class="rating">★★★★☆ <span class="rating-value">4.2</span></div>
+                    <p class="price">$49</p>
+                    <a href="product-detail.html?name=Headphones" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Headphones', '49')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Headphones', '49')">Add to Wishlist</button>
+                </div>
+                <div class="product-card" data-name="Tablet" data-category="electronics" data-price="499">
+                    <img src="malik.webp" alt="Tablet">
+                    <h3>Tablet</h3>
+                    <p class="description">Versatile tablet for work and entertainment.</p>
+                    <div class="rating">★★★★☆ <span class="rating-value">4.3</span></div>
+                    <p class="price">$499</p>
+                    <a href="product-detail.html?name=Tablet" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Tablet', '499')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Tablet', '499')">Add to Wishlist</button>
+                </div>
+                <div class="product-card" data-name="Smartwatch" data-category="electronics" data-price="199">
+                    <img src="malik.webp" alt="Smartwatch">
+                    <h3>Smartwatch</h3>
+                    <p class="description">Fitness tracking smartwatch with notifications.</p>
+                    <div class="rating">★★★★★ <span class="rating-value">4.8</span></div>
+                    <p class="price">$199</p>
+                    <a href="product-detail.html?name=Smartwatch" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Smartwatch', '199')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Smartwatch', '199')">Add to Wishlist</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section" id="fashion">
+            <h2>Fashion</h2>
+            <div class="products-grid">
+                <div class="product-card" data-name="T-Shirt" data-category="fashion" data-price="19">
+                    <img src="malik.webp" alt="T-Shirt">
+                    <h3>T-Shirt</h3>
+                    <p class="description">Comfortable cotton t-shirt for everyday wear.</p>
+                    <div class="rating">★★★★☆ <span class="rating-value">4.4</span></div>
+                    <p class="price">$19</p>
+                    <a href="product-detail.html?name=T-Shirt" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('T-Shirt', '19')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('T-Shirt', '19')">Add to Wishlist</button>
+                </div>
+                <div class="product-card" data-name="Jeans" data-category="fashion" data-price="59">
+                    <img src="malik.webp" alt="Jeans">
+                    <h3>Jeans</h3>
+                    <p class="description">Slim-fit jeans in classic blue.</p>
+                    <div class="rating">★★★★★ <span class="rating-value">4.7</span></div>
+                    <p class="price">$59</p>
+                    <a href="product-detail.html?name=Jeans" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Jeans', '59')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Jeans', '59')">Add to Wishlist</button>
+                </div>
+                <div class="product-card" data-name="Shoes" data-category="fashion" data-price="79">
+                    <img src="malik.webp" alt="Shoes">
+                    <h3>Shoes</h3>
+                    <p class="description">Casual sneakers for all-day comfort.</p>
+                    <div class="rating">★★★★☆ <span class="rating-value">4.1</span></div>
+                    <p class="price">$79</p>
+                    <a href="product-detail.html?name=Shoes" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Shoes', '79')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Shoes', '79')">Add to Wishlist</button>
+                </div>
+                <div class="product-card" data-name="Dress" data-category="fashion" data-price="89">
+                    <img src="malik.webp" alt="Dress">
+                    <h3>Dress</h3>
+                    <p class="description">Elegant summer dress with floral print.</p>
+                    <div class="rating">★★★★★ <span class="rating-value">4.9</span></div>
+                    <p class="price">$89</p>
+                    <a href="product-detail.html?name=Dress" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Dress', '89')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Dress', '89')">Add to Wishlist</button>
+                </div>
+                <div class="product-card" data-name="Hat" data-category="fashion" data-price="25">
+                    <img src="malik.webp" alt="Hat">
+                    <h3>Hat</h3>
+                    <p class="description">Stylish baseball cap for casual outings.</p>
+                    <div class="rating">★★★★☆ <span class="rating-value">4.0</span></div>
+                    <p class="price">$25</p>
+                    <a href="product-detail.html?name=Hat" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Hat', '25')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Hat', '25')">Add to Wishlist</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section" id="home-garden">
+            <h2>Home & Garden</h2>
+            <div class="products-grid">
+                <div class="product-card" data-name="Lamp" data-category="home-garden" data-price="29">
+                    <img src="malik.webp" alt="Lamp">
+                    <h3>Lamp</h3>
+                    <p class="description">Modern desk lamp with adjustable brightness.</p>
+                    <div class="rating">★★★★☆ <span class="rating-value">4.6</span></div>
+                    <p class="price">$29</p>
+                    <a href="product-detail.html?name=Lamp" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Lamp', '29')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Lamp', '29')">Add to Wishlist</button>
+                </div>
+                <div class="product-card" data-name="Vase" data-category="home-garden" data-price="15">
+                    <img src="malik.webp" alt="Vase">
+                    <h3>Vase</h3>
+                    <p class="description">Ceramic vase perfect for fresh flowers.</p>
+                    <div class="rating">★★★★★ <span class="rating-value">4.8</span></div>
+                    <p class="price">$15</p>
+                    <a href="product-detail.html?name=Vase" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Vase', '15')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Vase', '15')">Add to Wishlist</button>
+                </div>
+                <div class="product-card" data-name="Plant Pot" data-category="home-garden" data-price="12">
+                    <img src="malik.webp" alt="Plant Pot">
+                    <h3>Plant Pot</h3>
+                    <p class="description">Stylish pot for indoor plants.</p>
+                    <div class="rating">★★★★☆ <span class="rating-value">4.3</span></div>
+                    <p class="price">$12</p>
+                    <a href="product-detail.html?name=Plant%20Pot" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Plant Pot', '12')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Plant Pot', '12')">Add to Wishlist</button>
+                </div>
+                <div class="product-card" data-name="Rug" data-category="home-garden" data-price="99">
+                    <img src="malik.webp" alt="Rug">
+                    <h3>Rug</h3>
+                    <p class="description">Soft area rug to warm up your space.</p>
+                    <div class="rating">★★★★★ <span class="rating-value">4.7</span></div>
+                    <p class="price">$99</p>
+                    <a href="product-detail.html?name=Rug" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Rug', '99')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Rug', '99')">Add to Wishlist</button>
+                </div>
+                <div class="product-card" data-name="Toolset" data-category="home-garden" data-price="45">
+                    <img src="malik.webp" alt="Toolset">
+                    <h3>Toolset</h3>
+                    <p class="description">Complete toolset for DIY projects.</p>
+                    <div class="rating">★★★★☆ <span class="rating-value">4.4</span></div>
+                    <p class="price">$45</p>
+                    <a href="product-detail.html?name=Toolset" class="view-details">View Details</a>
+                    <button class="add-to-cart" onclick="addToCart('Toolset', '45')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Toolset', '45')">Add to Wishlist</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="show-cart-btn" title="Show Cart">🛒</button>
+
+    <div id="cart-section" class="cart-sidebar hidden">
+        <button id="toggle-cart">Hide Cart</button>
+        <div id="cart-content">
+            <h2>Your Cart</h2>
+            <ul id="cart-list"></ul>
+            <p>Total: $<span id="cart-total">0</span></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Malik Store. All rights reserved. <a href="index.html" target="_self">Back to Home</a> | <a href="#electronics" target="_self">Electronics</a> | <a href="#fashion" target="_self">Fashion</a> | <a href="#home-garden" target="_self">Home & Garden</a></p>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script src="wishlist.js"></script>
+</body>
+</html>
