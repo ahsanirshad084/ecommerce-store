@@ -8,3 +8,7 @@
 - [x] Add home page button to the header bar in index.html
 - [x] Add 3D animation to the home page (e.g., hero section elements)
 - [x] Test the updated home page with new button and animations
+- [x] Add GitHub Actions workflow for deployment
+- [x] Improve mobile responsiveness with media queries
+- [x] Remove featured products section from home page
+- [x] Make home page more attractive with enhanced hero section
