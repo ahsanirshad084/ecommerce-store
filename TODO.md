@@ -1,26 +1,10 @@
-# Implementation Steps for E-commerce Features
+# TODO: Add 3D Animation to E-commerce Website (Extended)
 
-## Product Detail Page
-- [x] Create product-detail.html with full product details (photos, price, stock, description, reviews)
-- [x] Add links from product cards in products.html to product-detail.html
-- [x] Add links from product cards in index.html to product-detail.html
-
-## Checkout Page
-- [x] Create checkout.html with form for address, payment, confirmation
-- [x] Integrate checkout with cart for order summary
-- [x] Add checkout button in cart sidebar
-
-## User Accounts
-- [x] Create login.html
-- [x] Create register.html
-- [x] Implement localStorage-based login/logout (create user.js)
-- [x] Add order history view (store orders in localStorage)
-
-## Wishlist / Favorites
-- [x] Create wishlist.js for wishlist management
-- [x] Add wishlist buttons to product cards in products.html
-- [x] Persist wishlist in localStorage
-
-## General
-- [ ] Update style.css for new pages and features
-- [ ] Test all features and fix bugs
+## Tasks
+- [x] Add perspective to .products-grid in style.css to enable 3D transforms
+- [x] Enhance .product-card hover effect with 3D rotation (tilt on X and Y axes)
+- [x] Test the website by opening index.html in a browser to verify the 3D animation
+- [x] Check for any layout issues on different screen sizes
+- [x] Add home page button to the header bar in index.html
+- [x] Add 3D animation to the home page (e.g., hero section elements)
+- [x] Test the updated home page with new button and animations

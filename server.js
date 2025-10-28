@@ -2,6 +2,7 @@ const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 const path = require('path');
+const nodemailer = require('nodemailer');
 
 const app = express();
 const PORT = 3000;
@@ -10,6 +11,15 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
+
+// Email transporter setup
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'your-email@gmail.com', // Replace with your email
+        pass: 'your-app-password' // Replace with your app password
+    }
+});
 
 // Database setup
 const db = new sqlite3.Database('./ecommerce.db', (err) => {
@@ -123,6 +133,12 @@ function insertSampleProducts() {
 
 // API Routes
 
+// Welcome endpoint
+app.get('/api/welcome', (req, res) => {
+    console.log(`Request received: ${req.method} ${req.path}`);
+    res.json({ message: 'Welcome to the Ecommerce Store API!' });
+});
+
 // Get all products
 app.get('/api/products', (req, res) => {
     db.all("SELECT * FROM products", (err, rows) => {
@@ -220,6 +236,10 @@ app.post('/api/orders', (req, res) => {
             stmt.run(orderId, item.name, item.price, item.quantity);
         });
         stmt.finalize();
+
+        // Send email notification
+        sendOrderNotification(shipping.email, orderId, items, total, shipping);
+
         res.json({ id: orderId, message: 'Order placed successfully' });
     });
 });
@@ -306,6 +326,48 @@ app.delete('/api/wishlist/:userId/:productName', (req, res) => {
         res.json({ message: 'Item removed from wishlist' });
     });
 });
+
+// Email notification function
+function sendOrderNotification(customerEmail, orderId, items, total, shipping) {
+    const itemsList = items.map(item => `${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}`).join('\n');
+
+    const mailOptions = {
+        from: 'your-email@gmail.com', // Replace with your email
+        to: customerEmail,
+        subject: `Order Confirmation - Order ID: ${orderId}`,
+        text: `
+Dear ${shipping.name},
+
+Thank you for your order! Here are the details:
+
+Order ID: ${orderId}
+Order Date: ${new Date().toLocaleDateString()}
+
+Shipping Address:
+${shipping.name}
+${shipping.address}
+${shipping.city}, ${shipping.zip}
+
+Items Ordered:
+${itemsList}
+
+Total: $${total.toFixed(2)}
+
+We will process your order shortly. You will receive another email when your order ships.
+
+Best regards,
+Ecommerce Store Team
+        `
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log('Error sending email:', error);
+        } else {
+            console.log('Email sent:', info.response);
+        }
+    });
+}
 
 // Start server
 app.listen(PORT, () => {

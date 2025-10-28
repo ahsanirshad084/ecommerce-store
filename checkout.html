@@ -14,6 +14,10 @@
             <div class="logo border"></div>
             </div>
             <div class="nav-buttons">
+                <a href="index.html" target="_self" class="home-button">
+                    <i class="fas fa-home"></i>
+                    <p>home</p>
+                </a>
                 <a href="products.html" target="_self" class="product-button">
                     <i class="fas fa-shopping-bag"></i>
                     <p>product </p>
@@ -58,20 +62,42 @@
                             <label for="zip">ZIP Code</label>
                             <input type="text" id="zip" required>
                         </div>
-                        <h2>Payment Information</h2>
+                        <h2>Payment Method</h2>
                         <div class="form-group">
-                            <label for="card-number">Card Number</label>
-                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                            <label for="payment-method">Select Payment Method</label>
+                            <select id="payment-method" required>
+                                <option value="">Choose a payment method</option>
+                                <option value="bank">Bank Transfer</option>
+                                <option value="cod">Cash on Delivery</option>
+                                <option value="card">Credit/Debit Card</option>
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <label for="expiry">Expiry Date</label>
-                            <input type="text" id="expiry" placeholder="MM/YY" required>
+                        <div id="card-details" style="display: none;">
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                            </div>
+                            <div class="form-group">
+                                <label for="expiry">Expiry Date</label>
+                                <input type="text" id="expiry" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="cvv">CVV</label>
-                            <input type="text" id="cvv" required>
+                        <div id="bank-details" style="display: none;">
+                            <p>Please transfer the total amount to the following bank account:</p>
+                            <p><strong>Account Name:</strong> Malik Store</p>
+                            <p><strong>Account Number:</strong> 1234567890</p>
+                            <p><strong>Bank:</strong> Example Bank</p>
+                            <p><strong>Reference:</strong> Order ID will be provided after placing order</p>
+                        </div>
+                        <div id="cod-details" style="display: none;">
+                            <p>You will pay in cash when the order is delivered to your address.</p>
                         </div>
                         <button type="submit" class="checkout-btn">Place Order</button>
+                        <button type="button" id="track-order-btn" class="checkout-btn" style="background: #28a745; margin-top: 10px;">Track Order</button>
                     </form>
                 </div>
             </div>
